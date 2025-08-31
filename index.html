@@ -46,9 +46,19 @@
                     <textarea id="phoneNumbers" class="input-field" rows="4" placeholder="11987654321&#10;21912345678&#10;31999998888"></textarea>
                 </div>
                 <div class="input-group">
-                    <label for="messageText">Sua Mensagem</label>
-                    <textarea id="messageText" class="input-field" placeholder="Clique em um modelo abaixo ou escreva a sua..."></textarea>
+            <div class="input-group-header">
+                <label for="messageText">Sua Mensagem</label>
+                <div class="editor-actions">
+                    <button id="copy-message-btn" class="editor-action-btn" title="Copiar Mensagem">
+                        <i data-feather="copy"></i>
+                    </button>
+                    <button id="clear-all-btn" class="editor-action-btn" title="Limpar Tudo">
+                        <i data-feather="trash-2"></i>
+                    </button>
                 </div>
+            </div>
+            <textarea id="messageText" class="textarea-field" placeholder="Clique em um modelo abaixo ou escreva a sua..."></textarea>
+        </div>
                 <div id="placeholder-editor-container"></div>
                 <div class="schedule-group">
                     <div class="input-group">

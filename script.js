@@ -2,34 +2,70 @@
 // 1. DADOS DOS TEMPLATES (AGORA COM CAMPOS CONTEXTUAIS)
 // =================================================================================
 
+// =================================================================================
+// 1. DADOS DOS TEMPLATES (VERSÃO COMPLETA COM 32 MODELOS)
+// =================================================================================
+
 const templatesData = {
-  "aniversario": [
+  "Aniversário": [
     { 
       "id": "aniv_01", 
       "texto": "Feliz aniversário, [Nome]! 🎉 Que seu dia seja incrível e repleto de alegrias. Tudo de bom hoje e sempre!",
-      "campos": [
-        { "key": "[Nome]", "label": "Nome do Aniversariante", "type": "text", "placeholder": "Ex: Maria" }
-      ]
+      "campos": [ { "key": "[Nome]", "label": "Nome do Aniversariante", "type": "text" } ]
     },
-    { "id": "aniv_02", "texto": "Parabéns! 🎂 Muita saúde, paz, amor e sucesso neste novo ciclo que se inicia.", "campos": [] },
+    { 
+      "id": "aniv_02", 
+      "texto": "Parabéns, [Nome]! 🎂 Muita saúde, paz, amor e sucesso neste novo ciclo que se inicia.",
+      "campos": [ { "key": "[Nome]", "label": "Nome do Aniversariante", "type": "text" } ]
+    },
+    { 
+      "id": "aniv_03", 
+      "texto": "Feliz vida, [Nome]! ✨ Desejo que você celebre este dia com muita felicidade. Um grande abraço!",
+      "campos": [ { "key": "[Nome]", "label": "Nome do Aniversariante", "type": "text" } ]
+    },
     { 
       "id": "aniv_04", 
       "texto": "Para comemorar seu dia especial, [Nome], temos um presente para você: [Desconto/Presente]! Válido por toda a semana do seu aniversário. 🥳",
       "campos": [
-        { "key": "[Nome]", "label": "Nome do Aniversariante", "type": "text", "placeholder": "Ex: João" },
-        { "key": "[Desconto/Presente]", "label": "Desconto ou Presente", "type": "text", "placeholder": "Ex: 15% de desconto" }
+        { "key": "[Nome]", "label": "Nome do Aniversariante", "type": "text" },
+        { "key": "[Desconto/Presente]", "label": "Desconto ou Presente", "type": "text" }
       ]
     },
-    { "id": "aniv_03", "texto": "Feliz vida! ✨ Desejo que você celebre este dia com muita felicidade. Um grande abraço!", "campos": [] }
+    { 
+      "id": "aniv_05", 
+      "texto": "Olá, [Nome]! Passando para te desejar um feliz e abençoado aniversário. Que a felicidade te encontre em cada momento do seu dia. Parabéns!",
+      "campos": [ { "key": "[Nome]", "label": "Nome (Formal)", "type": "text" } ]
+    },
+    { 
+      "id": "aniv_06", 
+      "texto": "E aí, [Apelido]! Hoje o dia é todo seu! Muitas felicidades, sucesso e que todos os seus sonhos se realizem. Tamo junto!",
+      "campos": [ { "key": "[Apelido]", "label": "Nome ou Apelido (Casual)", "type": "text" } ]
+    },
+    { 
+      "id": "aniv_07", 
+      "texto": "Em nome de toda a equipe [Nome da Empresa], desejamos a você, [Nome do Cliente], um feliz aniversário! Agradecemos pela sua parceria e confiança.",
+      "campos": [
+        { "key": "[Nome da Empresa]", "label": "Nome da Empresa", "type": "text" },
+        { "key": "[Nome do Cliente]", "label": "Nome do Cliente (VIP)", "type": "text" }
+      ]
+    },
+    { 
+      "id": "aniv_08", 
+      "texto": "Que seu aniversário seja tão incrível quanto você, [Nome]! 🎉 Use o cupom [CUPOM] para um presente especial em nosso site. Aproveite seu dia!",
+      "campos": [
+        { "key": "[Nome]", "label": "Nome do Aniversariante", "type": "text" },
+        { "key": "[CUPOM]", "label": "Código do Cupom", "type": "text" }
+      ]
+    }
   ],
-  "cobranca": [
+  "Cobrança": [
     { 
       "id": "cobr_01", 
       "texto": "Olá, [Nome do Cliente]. Passando para lembrar sobre a fatura de [Produto/Serviço] no valor de R$[Valor], que venceu em [Data de Vencimento].",
       "campos": [
         { "key": "[Nome do Cliente]", "label": "Nome do Cliente", "type": "text" },
-        { "key": "[Produto/Serviço]", "label": "Produto/Serviço", "type": "text", "placeholder": "Ex: Plano Mensal" },
-        { "key": "[Valor]", "label": "Valor (só números)", "type": "number", "placeholder": "Ex: 99,90" },
+        { "key": "[Produto/Serviço]", "label": "Produto/Serviço", "type": "text" },
+        { "key": "[Valor]", "label": "Valor", "type": "number" },
         { "key": "[Data de Vencimento]", "label": "Data de Vencimento", "type": "date" }
       ]
     },
@@ -42,19 +78,52 @@ const templatesData = {
         { "key": "[Código de Barras]", "label": "Código de Barras", "type": "text" }
       ]
     },
-    { "id": "cobr_03", "texto": "Oi, tudo joia? Verificamos que o pagamento referente à fatura [Fatura Nº] ainda está pendente. Se já realizou o pagamento, por favor, desconsidere. 😉", 
-      "campos": [
-        { "key": "[Fatura Nº]", "label": "Número da Fatura", "type": "text" }
-      ]
+    { 
+      "id": "cobr_03", 
+      "texto": "Oi, tudo joia? Verificamos que o pagamento referente à fatura [Fatura Nº] ainda está pendente. Se já realizou o pagamento, por favor, desconsidere. 😉", 
+      "campos": [ { "key": "[Fatura Nº]", "label": "Número da Fatura", "type": "text" } ]
     },
-    { "id": "cobr_04", "texto": "Oi, [Nome do Cliente]. Notei que seu pagamento para [Produto/Serviço] ainda não foi identificado. Aconteceu algum problema? Se precisar de ajuda ou de uma nova data, me avise! 👍", 
+    { 
+      "id": "cobr_04", 
+      "texto": "Oi, [Nome do Cliente]. Notei que seu pagamento para [Produto/Serviço] ainda não foi identificado. Aconteceu algum problema? Se precisar de ajuda ou de uma nova data, me avise! 👍", 
       "campos": [
         { "key": "[Nome do Cliente]", "label": "Nome do Cliente", "type": "text" },
         { "key": "[Produto/Serviço]", "label": "Produto/Serviço", "type": "text" }
       ]
+    },
+    { 
+      "id": "cobr_05", 
+      "texto": "Prezado(a) [Nome do Cliente], este é um lembrete amigável de que sua fatura nº [Fatura Nº] está com [Nº Dias] dias de atraso. Para evitar juros, por favor, regularize sua situação através do link: [Link de Pagamento]",
+      "campos": [
+        { "key": "[Nome do Cliente]", "label": "Nome do Cliente", "type": "text" },
+        { "key": "[Fatura Nº]", "label": "Número da Fatura", "type": "text" },
+        { "key": "[Nº Dias]", "label": "Dias de Atraso", "type": "number" },
+        { "key": "[Link de Pagamento]", "label": "Link de Pagamento", "type": "text" }
+      ]
+    },
+    { 
+      "id": "cobr_06", 
+      "texto": "Olá, [Nome do Cliente]! Tudo bem? Estou entrando em contato para confirmar o recebimento da fatura referente a [Produto/Serviço]. O pagamento está agendado?",
+      "campos": [
+        { "key": "[Nome do Cliente]", "label": "Nome do Cliente", "type": "text" },
+        { "key": "[Produto/Serviço]", "label": "Produto/Serviço", "type": "text" }
+      ]
+    },
+    { 
+      "id": "cobr_07", 
+      "texto": "ÚLTIMO AVISO: Olá, [Nome do Cliente]. Sua fatura de [Produto/Serviço] continua em aberto. Para evitar a suspensão do serviço, por favor, efetue o pagamento em até 24h.",
+      "campos": [
+        { "key": "[Nome do Cliente]", "label": "Nome do Cliente", "type": "text" },
+        { "key": "[Produto/Serviço]", "label": "Produto/Serviço", "type": "text" }
+      ]
+    },
+    { 
+      "id": "cobr_08", 
+      "texto": "Oi, [Nome do Cliente]! Vi que sua fatura vence hoje. Quer que eu te envie o PIX Copia e Cola para facilitar o pagamento? 📲",
+      "campos": [ { "key": "[Nome do Cliente]", "label": "Nome do Cliente", "type": "text" } ]
     }
   ],
-  "vendas": [
+  "Vendas": [
     { 
       "id": "vend_01", 
       "texto": "Oi, [Nome do Cliente]! 👋 Tenho uma oferta especial para você hoje: [Produto] com [Desconto]% de desconto. Válido só até amanhã! Confira: [Link da Oferta]",
@@ -65,39 +134,121 @@ const templatesData = {
         { "key": "[Link da Oferta]", "label": "Link da Oferta", "type": "text" }
       ]
     },
-    { "id": "vend_02", "texto": "Você viu nossa novidade? 🚀 O [Novo Produto] acabou de chegar e acho que você vai adorar. Espia aqui: [Link do Produto]", 
+    { 
+      "id": "vend_02", 
+      "texto": "Você viu nossa novidade? 🚀 O [Novo Produto] acabou de chegar e acho que você vai adorar. Espia aqui: [Link do Produto]", 
       "campos": [
         { "key": "[Novo Produto]", "label": "Nome do Novo Produto", "type": "text" },
         { "key": "[Link do Produto]", "label": "Link do Produto", "type": "text" }
       ]
     },
-    { "id": "vend_04", "texto": "Faz um tempo que você não aparece, [Nome do Cliente]! Sentimos sua falta. Que tal dar uma olhada nas nossas novidades com um cupom especial de reativação: [CUPOM] ✨", 
+    { 
+      "id": "vend_03", 
+      "texto": "Notamos seu interesse em [Produto]. Restam poucas unidades! Garanta o seu agora antes que acabe.",
+      "campos": [ { "key": "[Produto]", "label": "Produto", "type": "text" } ]
+    },
+    { 
+      "id": "vend_04", 
+      "texto": "Faz um tempo que você não aparece, [Nome do Cliente]! Sentimos sua falta. Que tal dar uma olhada nas nossas novidades com um cupom especial de reativação: [CUPOM] ✨", 
       "campos": [
         { "key": "[Nome do Cliente]", "label": "Nome do Cliente", "type": "text" },
         { "key": "[CUPOM]", "label": "Código do Cupom", "type": "text" }
       ]
     },
-    { "id": "vend_03", "texto": "Notamos seu interesse em [Produto]. Restam poucas unidades! Garanta o seu agora antes que acabe.", "campos": [{ "key": "[Produto]", "label": "Produto", "type": "text" }] }
+    { 
+      "id": "vend_05", 
+      "texto": "Olá, [Nome do Cliente]! Vi que você adicionou o [Produto] no carrinho mas não finalizou a compra. Aconteceu algo? Posso te ajudar a concluir?",
+      "campos": [
+        { "key": "[Nome do Cliente]", "label": "Nome do Cliente", "type": "text" },
+        { "key": "[Produto]", "label": "Produto no Carrinho", "type": "text" }
+      ]
+    },
+    { 
+      "id": "vend_06", 
+      "texto": "Oi, [Nome do Cliente]! Comprando [Produto 1], você leva o [Produto 2] pela metade do preço! Que tal aproveitar? 😉 A oferta acaba hoje!",
+      "campos": [
+        { "key": "[Nome do Cliente]", "label": "Nome do Cliente", "type": "text" },
+        { "key": "[Produto 1]", "label": "Produto 1", "type": "text" },
+        { "key": "[Produto 2]", "label": "Produto 2", "type": "text" }
+      ]
+    },
+    { 
+      "id": "vend_07", 
+      "texto": "FRETE GRÁTIS! 🎉 Oi, [Nome do Cliente], só hoje todos os pedidos acima de R$[Valor Mínimo] têm frete por nossa conta. Aproveite!",
+      "campos": [
+        { "key": "[Nome do Cliente]", "label": "Nome do Cliente", "type": "text" },
+        { "key": "[Valor Mínimo]", "label": "Valor Mínimo", "type": "number" }
+      ]
+    },
+    { 
+      "id": "vend_08", 
+      "texto": "É um prazer ter você como cliente, [Nome do Cliente]! Para agradecer, liberamos um cupom de [Desconto]% exclusivo para sua próxima compra: [CUPOM]",
+      "campos": [
+        { "key": "[Nome do Cliente]", "label": "Nome do Cliente VIP", "type": "text" },
+        { "key": "[Desconto]", "label": "Desconto (%)", "type": "number" },
+        { "key": "[CUPOM]", "label": "Código do Cupom", "type": "text" }
+      ]
+    }
   ],
-  "marketing_divulgacao": [
-    { "id": "mkt_01", "texto": "📢 NOVIDADE NA ÁREA! Chegou o que você estava esperando: [Nome da Novidade]. Saiba mais em nosso site: [Link]", 
+  "Marketing_Divulgação": [
+    { 
+      "id": "mkt_01", 
+      "texto": "📢 NOVIDADE NA ÁREA! Chegou o que você estava esperando: [Nome da Novidade]. Saiba mais em nosso site: [Link]", 
       "campos": [
-          { "key": "[Nome da Novidade]", "label": "Nome da Novidade", "type": "text" },
-          { "key": "[Link]", "label": "Link de Divulgação", "type": "text" }
+        { "key": "[Nome da Novidade]", "label": "Nome da Novidade", "type": "text" },
+        { "key": "[Link]", "label": "Link de Divulgação", "type": "text" }
       ]
     },
-    { "id": "mkt_02", "texto": "Ei, [Nome]! Quer ficar por dentro de todas as nossas promoções? Participe do nosso grupo VIP no WhatsApp: [Link do Grupo]", 
+    { 
+      "id": "mkt_02", 
+      "texto": "Ei, [Nome]! Quer ficar por dentro de todas as nossas promoções? Participe do nosso grupo VIP no WhatsApp: [Link do Grupo]", 
       "campos": [
-          { "key": "[Nome]", "label": "Nome (opcional)", "type": "text" },
-          { "key": "[Link do Grupo]", "label": "Link do Grupo", "type": "text" }
+        { "key": "[Nome]", "label": "Nome (opcional)", "type": "text" },
+        { "key": "[Link do Grupo]", "label": "Link do Grupo", "type": "text" }
       ]
     },
-    { "id": "mkt_04", "texto": "Fique de olho! 👀 Na próxima semana teremos [Evento/Promoção]. Prepare-se para ofertas incríveis que anunciaremos primeiro!", 
+    { 
+      "id": "mkt_03", 
+      "texto": "Semana do Consumidor! 🛍️ Descontos de até 50% em todo o site. Não perca tempo, a promoção é por tempo limitado!",
+      "campos": []
+    },
+    { 
+      "id": "mkt_04", 
+      "texto": "Fique de olho! 👀 Na próxima semana teremos [Evento/Promoção]. Prepare-se para ofertas incríveis que anunciaremos primeiro!", 
+      "campos": [ { "key": "[Evento/Promoção]", "label": "Evento ou Promoção", "type": "text" } ]
+    },
+    { 
+      "id": "mkt_05", 
+      "texto": "Sua opinião é muito importante! ✨ [Nome], você poderia nos dar um feedback sobre sua última experiência com [Produto/Serviço]? Leva só 1 minuto!",
       "campos": [
-          { "key": "[Evento/Promoção]", "label": "Evento ou Promoção", "type": "text", "placeholder": "Ex: Black Friday" }
+        { "key": "[Nome]", "label": "Nome do Cliente", "type": "text" },
+        { "key": "[Produto/Serviço]", "label": "Produto/Serviço", "type": "text" }
       ]
     },
-    { "id": "mkt_03", "texto": "Semana do Consumidor! 🛍️ Descontos de até 50% em todo o site. Não perca tempo, a promoção é por tempo limitado!", "campos": [] }
+    { 
+      "id": "mkt_06", 
+      "texto": "Você sabia? 🤔 [Curiosidade sobre seu nicho]. Quer saber mais? Acompanhe nossos stories no Instagram: [Link do Instagram]",
+      "campos": [
+        { "key": "[Curiosidade sobre seu nicho]", "label": "Curiosidade/Dica Rápida", "type": "text" },
+        { "key": "[Link do Instagram]", "label": "Link do Instagram", "type": "text" }
+      ]
+    },
+    { 
+      "id": "mkt_07", 
+      "texto": "Estamos AO VIVO! 🔴 Participe da nossa live sobre [Tema da Live] e tire suas dúvidas em tempo real. Não fique de fora: [Link da Live]",
+      "campos": [
+        { "key": "[Tema da Live]", "label": "Tema da Live", "type": "text" },
+        { "key": "[Link da Live]", "label": "Link da Live", "type": "text" }
+      ]
+    },
+    { 
+      "id": "mkt_08", 
+      "texto": "SAVE THE DATE! 🗓️ No dia [Data do Evento], teremos um evento especial sobre [Nome do Evento]. Marque na sua agenda e confirme sua presença para receber um lembrete!",
+      "campos": [
+        { "key": "[Data do Evento]", "label": "Data do Evento", "type": "date" },
+        { "key": "[Nome do Evento]", "label": "Nome do Evento", "type": "text" }
+      ]
+    }
   ]
 };
 
@@ -124,6 +275,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggleButton = document.getElementById('theme-toggle');
     const sunIcon = themeToggleButton.querySelector('i[data-feather="sun"]');
     const moonIcon = themeToggleButton.querySelector('i[data-feather="moon"]');
+    const copyMessageBtn = document.getElementById('copy-message-btn');
+    const clearAllBtn = document.getElementById('clear-all-btn');
 
     // --- VARIÁVEIS DE ESTADO ---
     let sendTimer = null;
@@ -133,6 +286,40 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentBulkSendIndex = 0;
 
     // --- FUNÇÕES ---
+
+
+    // --- FUNÇÕES DE UTILIDADE (Toast, Limpar, etc.) ---
+
+    function showToast(message) {
+        const toast = document.createElement('div');
+        toast.className = 'toast-notification';
+        toast.textContent = message;
+        document.body.appendChild(toast);
+
+        setTimeout(() => {
+            toast.classList.add('show');
+        }, 10);
+
+        setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => {
+                document.body.removeChild(toast);
+            }, 300);
+        }, 2500);
+    }
+
+    function clearAllFields() {
+        if (confirm('Tem certeza que deseja limpar todos os campos?')) {
+            phoneNumbersInput.value = '';
+            messageTextArea.value = '';
+            scheduleDateInput.value = '';
+            scheduleTimeInput.value = '';
+            placeholderEditorContainer.innerHTML = '';
+            placeholderEditorContainer.style.display = 'none';
+            currentTemplate = null;
+        }
+    }
+
 
     function renderPlaceholderEditor(template) {
         placeholderEditorContainer.innerHTML = '';
@@ -177,7 +364,7 @@ document.addEventListener('DOMContentLoaded', () => {
         categories.forEach(category => {
             const categoryElement = document.createElement('div');
             categoryElement.className = 'category-item';
-            categoryElement.textContent = category.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+            categoryElement.textContent = category.replace(/_/g, ' ');
             categoryElement.dataset.category = category;
             categoryContainer.appendChild(categoryElement);
         });
@@ -256,6 +443,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // --- EVENT LISTENERS ---
+
+    copyMessageBtn.addEventListener('click', () => {
+        if (messageTextArea.value) {
+            navigator.clipboard.writeText(messageTextArea.value)
+                .then(() => {
+                    showToast('Mensagem copiada com sucesso!');
+                })
+                .catch(err => {
+                    showToast('Erro ao copiar a mensagem.');
+                    console.error('Erro de cópia:', err);
+                });
+        }
+    });
+
+    clearAllBtn.addEventListener('click', clearAllFields);
 
     themeToggleButton.addEventListener('click', () => {
         document.documentElement.classList.toggle('dark-mode');

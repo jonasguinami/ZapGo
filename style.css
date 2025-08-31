@@ -155,6 +155,62 @@ h2 {
 }
 .placeholder-group input:focus { border-color: var(--secondary-color); box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.15); }
 
+/* --- Ações do Editor (NOVO) --- */
+.input-group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.editor-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.editor-action-btn {
+    background: none;
+    border: none;
+    color: var(--text-light-color);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-speed);
+}
+.editor-action-btn:hover {
+    color: var(--primary-color);
+    background-color: var(--bg-color-alt);
+    transform: scale(1.1);
+}
+.editor-action-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* --- Estilo para o Toast de Notificação (NOVO) --- */
+.toast-notification {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2c3e50;
+    color: white;
+    padding: 12px 24px;
+    border-radius: var(--border-radius-lg);
+    z-index: 9999;
+    font-weight: 500;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.toast-notification.show {
+    opacity: 1;
+    transform: translate(-50%, -10px);
+}
+
 /* ==========================================================================
    4. Componentes Específicos
    ========================================================================== */
@@ -163,7 +219,7 @@ h2 {
 .category-item:active, .template-item:active { transform: scale(0.97); }
 .category-item { font-weight: 600; align-items: center; text-align: center; }
 .category-item:hover { transform: translateY(-4px); box-shadow: 0 8px 20px var(--shadow-color-hover); background: var(--primary-color); color: white; border-color: var(--primary-color); }
-.template-item { font-size: 0.9rem; font-weight: 400; }
+.template-item { font-size: 0.9rem; font-weight: 400; overflow-wrap: break-word;}
 .template-item:hover { transform: translateY(-4px); border-color: var(--secondary-color); box-shadow: 0 0 15px var(--shadow-color-hover); }
 
 #send-queue-card h2, #send-queue-card h3 { text-align: center; }
@@ -197,12 +253,57 @@ html.dark-mode h2 { border-bottom-color: var(--border-color); }
    6. Responsividade (Mobile)
    ========================================================================== */
 @media (max-width: 768px) {
-    body { font-size: 15px; }
-    .navbar-logo img { height: 60px; }
-    .navbar-title { font-size: 1.1rem; }
-    .container { padding: 0 1rem 1rem 1rem; }
-    h2 { font-size: 1.5rem; }
-    .card { padding: 1.5rem; border-radius: var(--border-radius-lg); }
-    .grid-container { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
-    .schedule-group, .button-group, #placeholder-editor-container { grid-template-columns: 1fr; }
+    body {
+        font-size: 15px;
+    }
+
+    /* --- Layout e Navbar --- */
+    .navbar-logo img {
+        height: 40px; /* Reduz a logo para uma navbar mais fina */
+    }
+    .navbar-title {
+        font-size: 1.1rem; /* Ajusta o título para caber bem */
+        white-space: nowrap; /* Evita que o título quebre a linha */
+    }
+    .container {
+        padding: 0 1rem 1rem 1rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    .card {
+        padding: 1.5rem;
+        border-radius: var(--border-radius-lg);
+    }
+
+    /* --- Componentes --- */
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+    }
+
+    .template-item {
+        font-size: 0.85rem; /* Levemente menor para caber mais texto */
+        padding: 0.8rem;
+        min-height: 70px;
+        
+        /* CORREÇÃO DEFINITIVA PARA TEXTO VAZANDO */
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+
+    .schedule-group,
+    .button-group,
+    #placeholder-editor-container {
+        grid-template-columns: 1fr; /* Empilha os grupos de botões e inputs */
+    }
+
+    .btn {
+        padding: 14px;
+        font-size: 0.95rem;
+    }
+
+    .status-active .countdown {
+        font-size: 1.5rem;
+    }
 }
