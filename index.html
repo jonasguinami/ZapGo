@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZapGo - Mensagens Prontas</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#8A2BE2">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <img src="zapgo.png" alt="Logo ZapGo">
+            </a>
+            
+            <div class="navbar-menu">
+                <button id="theme-toggle" class="theme-toggle-btn" title="Alternar tema">
+                    <i data-feather="moon"></i>
+                    <i data-feather="sun" style="display: none;"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+        
+            <section class="card">
+                <h2>Editor de Mensagem</h2>
+
+                <div class="input-group">
+                    <label for="phoneNumbers">Números dos Clientes (um por linha)</label>
+                    <textarea id="phoneNumbers" class="input-field" rows="4" placeholder="11987654321&#10;21912345678&#10;31999998888"></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="messageText">Sua Mensagem</label>
+                    <textarea id="messageText" class="textarea-field" placeholder="Clique em um modelo abaixo ou escreva a sua..."></textarea>
+                </div>
+
+                <div id="placeholder-editor-container"></div>
+
+                <div class="schedule-group">
+                    <div class="input-group">
+                        <label for="scheduleDate">Data do Envio</label>
+                        <input type="date" id="scheduleDate" class="input-field">
+                    </div>
+                    <div class="input-group">
+                        <label for="scheduleTime">Hora do Envio</label>
+                        <input type="time" id="scheduleTime" class="input-field">
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button id="sendNowButton" class="btn">Enviar Imediatamente</button>
+                    <button id="scheduleButton" class="btn btn-secondary">Agendar Envio</button>
+                </div>
+
+                <div id="schedule-status" class="schedule-status-container" style="display: none;"></div>
+            </section>
+
+           <section id="send-queue-card" class="card" style="display: none;">
+                <h2><i data-feather="send" style="vertical-align: -4px; margin-right: 10px;"></i>Disparador de Mensagens</h2>
+                <div id="send-queue-content"></div>
+            </section>
+            
+            <section class="card">
+                <h2>Modelos Prontos</h2>
+                <div id="category-container" class="grid-container"></div>
+                <hr class="separator">
+                <div id="templates-container" class="grid-container"></div>
+            </section>
+
+            <section class="card">
+                <h2>Importar Contatos (de arquivo .txt)</h2>
+                <p class="card-subtitle">
+                    <strong>Importante:</strong> Isto não envia em massa. Apenas cria uma lista de links para você abrir a conversa com cada número individualmente.
+                </p>
+                <div class="input-group">
+    <label for="contactFile" class="btn btn-upload-txt">
+        <i data-feather="file-plus"></i>
+        Selecionar arquivo .txt
+    </label>
+    <input type="file" id="contactFile" accept=".txt" style="display: none;">
+</div>
+            </section>
+        
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+      // Ativa os ícones da biblioteca Feather Icons
+      feather.replace();
+    </script>
+
+</body>
+</html>

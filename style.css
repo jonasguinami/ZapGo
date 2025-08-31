@@ -1,0 +1,341 @@
+/* Importando a fonte e definindo variáveis de cor */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg-color: #f4f6f9;
+    --bg-color-alt: #e9ecef; /* Um cinza um pouco mais escuro para áreas de destaque */
+    --card-color: #ffffff;
+    --text-color: #212529;
+    --text-light-color: #6c757d;
+    --primary-color: #8A2BE2;
+    --secondary-color: #4A90E2;
+    --border-color: #dee2e6;
+    --shadow-color: rgba(40, 40, 90, 0.07);
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --border-radius-xl: 24px;
+    --border-radius-lg: 16px;
+}
+
+/* ==========================================================================
+   1. Reset Básico e Estilos Globais
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: poppins, sans-serif;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem 2rem 1rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+/* ==========================================================================
+   2. Layout (Navbar, Main, Cards)
+   ========================================================================== */
+.navbar {
+    background-color: var(--card-color);
+    padding: 0.75rem 1rem;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo img {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+.main-content {
+    padding-top: 2.5rem;
+}
+
+.card {
+    background-color: var(--card-color);
+    border-radius: var(--border-radius-xl);
+    padding: 2rem 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 40px var(--shadow-color);
+    border: 1px solid var(--border-color);
+}
+
+.card-subtitle {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-light-color);
+}
+
+.separator {
+    margin: 2.5rem 0;
+    border: 0;
+    border-top: 1px solid var(--border-color);
+}
+
+/* ==========================================================================
+   3. Componentes (Botões, Inputs, Grids, etc.)
+   ========================================================================== */
+
+/* --- Inputs e Formulários --- */
+.input-group {
+    margin-bottom: 1.5rem;
+}
+.input-group:last-child {
+    margin-bottom: 0;
+}
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.input-field,
+.textarea-field {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    background-color: var(--bg-color);
+    transition: all 0.3s ease;
+}
+
+.input-field:focus,
+.textarea-field:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(138, 43, 226, 0.15);
+    background-color: var(--card-color);
+}
+
+.textarea-field {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* --- Grupos de Ação --- */
+.schedule-group,
+.button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+.schedule-group {
+    margin-bottom: 1.5rem;
+}
+
+/* --- Botões --- */
+.btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 16px; border: 2px solid transparent; border-radius: var(--border-radius-lg); font-size: 1rem; font-weight: 600; cursor: pointer; text-align: center; transition: all 0.2s ease; }
+.btn:hover { transform: translateY(-3px); }
+.btn { background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); color: white; }
+.btn:hover { box-shadow: 0 10px 25px rgba(138, 43, 226, 0.3); }
+.btn-secondary { background: var(--bg-color-alt); color: var(--text-color); border-color: var(--border-color); }
+.btn-secondary:hover { background: var(--primary-color); border-color: var(--primary-color); color: white; box-shadow: 0 10px 25px rgba(138, 43, 226, 0.2); }
+.theme-toggle-btn { background: none; border: none; cursor: pointer; color: var(--text-light-color); padding: 0.5rem; border-radius: 50%; display: flex; transition: all 0.2s ease; }
+.theme-toggle-btn:hover { background-color: var(--bg-color); color: var(--primary-color); transform: scale(1.1); }
+
+/* --- Editor de Placeholders (ESTILO CORRIGIDO) --- */
+#placeholder-editor-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    border-radius: var(--border-radius-lg);
+    background-color: var(--bg-color-alt);
+    border: 1px solid var(--border-color);
+}
+#placeholder-editor-container:empty { display: none; }
+.placeholder-group label { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-color); }
+.placeholder-group input { width: 100%; padding: 15px; border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); font-family: 'Poppins', sans-serif; font-size: 1rem; background-color: var(--card-color); /* Fundo branco para se destacar */ transition: all 0.3s ease; }
+.placeholder-group input:focus { outline: none; border-color: var(--secondary-color); box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.15); }
+
+/* ==========================================================================
+   4. Componentes Específicos (Grid de Templates, Fila de Envio, etc.)
+   ========================================================================== */
+.grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
+.category-item, .template-item { background-color: var(--bg-color); padding: 1rem; border-radius: var(--border-radius-lg); cursor: pointer; transition: all 0.2s ease-in-out; border: 1px solid var(--border-color); min-height: 80px; display: flex; flex-direction: column; justify-content: center; }
+.category-item { font-weight: 600; align-items: center; text-align: center; }
+.category-item:hover { transform: translateY(-4px); box-shadow: 0 8px 15px var(--shadow-color); background: var(--primary-color); color: white; border-color: var(--primary-color); }
+.template-item { font-size: 0.9rem; font-weight: 400; }
+.template-item:hover { transform: translateY(-4px); border-color: var(--secondary-color); box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15); }
+
+#send-queue-card h2 { display: flex; align-items: center; }
+.queue-item { display: flex; justify-content: space-between; align-items: center; background-color: var(--bg-color); padding: 0.8rem 1rem; border-radius: var(--border-radius-lg); margin-bottom: 0.8rem; border: 1px solid var(--border-color); }
+.queue-item.item-sent { opacity: 0.6; }
+.btn-queue-send { padding: 8px 16px; font-size: 0.9rem; width: auto; gap: 0.5rem; background: var(--success-color); border-color: transparent; }
+.btn-queue-send:hover { background: #218838; box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3); }
+.btn-queue-send.sent { background: var(--text-light-color); cursor: not-allowed; }
+
+.schedule-status-container { margin-top: 2rem; padding: 1.25rem; border-radius: var(--border-radius-lg); text-align: center; border: 1px solid var(--border-color); }
+.status-active .countdown { font-size: 1.75rem; font-weight: 700; margin: 0.5rem 0 1rem 0; color: var(--primary-color); }
+.status-cancelled { color: var(--danger-color); font-weight: 600; }
+.status-sent { color: var(--success-color); font-weight: 600; }
+.btn-cancel { background: var(--text-light-color); padding: 8px 24px; font-size: 0.9rem; width: auto; border-color: transparent; }
+.btn-cancel:hover { background: var(--danger-color); box-shadow: 0 8px 15px rgba(0,0,0,0.2); }
+
+/* --- Estilo para o Botão de Upload de TXT (NOVO) --- */
+.btn-upload-txt {
+    background: var(--bg-color-alt);
+    color: var(--text-color);
+    border: 2px dashed var(--border-color);
+    font-weight: 500;
+    gap: 0.8rem;
+}
+
+.btn-upload-txt:hover {
+    background: var(--bg-color);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: none;
+    transform: none; /* Remove o efeito de levantar para este botão específico */
+}
+
+html.dark-mode .btn-upload-txt {
+    background: var(--bg-color-alt);
+    border-color: var(--border-color);
+}
+
+/* --- Estilo para a Lista de Contatos Importados (NOVO) --- */
+#contact-list-container {
+    margin-top: 2rem;
+}
+
+#contact-list-container h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Reutilizamos a classe .template-item, que já tem um bom estilo */
+#contact-list-container .template-item {
+    background-color: var(--card-color);
+    text-align: center;
+    font-weight: 500;
+    text-decoration: none; /* Garante que não terá sublinhado */
+    color: var(--secondary-color);
+}
+
+/* ==========================================================================
+   5. Tema Escuro (Dark Mode)
+   ========================================================================== */
+html.dark-mode {
+    --bg-color: #121212;
+    --bg-color-alt: #1f1f1f;
+    --card-color: #1e1e1e;
+    --text-color: #e0e0e0;
+    --text-light-color: #888;
+    --border-color: #333;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+/* --- ESTILOS GERAIS DO DARK MODE --- */
+html.dark-mode .btn-secondary { background: var(--bg-color-alt); border-color: var(--border-color); }
+html.dark-mode .queue-item,
+html.dark-mode .category-item,
+html.dark-mode .template-item { background-color: #2a2a2a; border-color: var(--border-color); }
+html.dark-mode ::placeholder { color: var(--text-light-color); opacity: 1; }
+
+/* --- CORREÇÃO DEFINITIVA PARA INPUTS NO DARK MODE --- */
+html.dark-mode .input-field,
+html.dark-mode .textarea-field,
+html.dark-mode .placeholder-group input {
+    background-color: #2a2a2a;
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+html.dark-mode .input-field:focus,
+html.dark-mode .textarea-field:focus,
+html.dark-mode .placeholder-group input:focus {
+    background-color: var(--card-color);
+}
+html.dark-mode #placeholder-editor-container {
+    background-color: var(--bg-color-alt);
+    border-color: var(--border-color);
+}
+
+/* --- TRANSIÇÕES SUAVES --- */
+body, .card, .input-field, .textarea-field, .category-item, .template-item, .navbar, .placeholder-group input, .btn {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* style.css */
+/* ... (todo o seu css anterior continua aqui) ... */
+
+/* ==========================================================================
+   9. Disparador Semi-Automático (NOVO)
+   ========================================================================== */
+
+#send-queue-card h2, #send-queue-card h3 {
+    text-align: center;
+}
+#send-queue-card p {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.queue-number-highlight {
+    color: var(--primary-color);
+    font-weight: 700;
+    background-color: var(--bg-color-alt);
+    padding: 4px 8px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.queue-complete h3 {
+    color: var(--success-color);
+    font-size: 1.8rem;
+}
+
+/* Removemos o estilo antigo de .queue-item, se ainda existir */
+.queue-item { display: none; }
+
+/* ==========================================================================
+   6. Responsividade (Mobile)
+   ========================================================================== */
+@media (max-width: 768px) {
+    body { font-size: 15px; }
+    .navbar-logo img { height: 60px; }
+    .container { padding: 0 1rem 1rem 1rem; }
+    h2 { font-size: 1.5rem; }
+    .card { padding: 1.5rem; border-radius: var(--border-radius-lg); }
+    .grid-container { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+    
+    .schedule-group,
+    .button-group,
+    #placeholder-editor-container {
+        grid-template-columns: 1fr;
+    }
+}

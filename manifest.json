@@ -1,0 +1,21 @@
+{
+  "name": "ZapGo - Mensagens Prontas",
+  "short_name": "ZapGo",
+  "description": "Seu assistente de mensagens prontas para WhatsApp.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f0f2f5",
+  "theme_color": "#8A2BE2",
+  "icons": [
+    {
+      "src": "assets/zapgo192.jpg",
+      "type": "image/jpeg",
+      "sizes": "192x192"
+    },
+    {
+      "src": "assets/zapgo512.jpg",
+      "type": "image/jpeg",
+      "sizes": "512x512"
+    }
+  ]
+}
