@@ -206,8 +206,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentBulkSendIndex >= bulkSendQueue.length) {
             sendQueueContent.innerHTML = `<div class="queue-complete"><h3>🎉 Envios finalizados!</h3><p>Todas as ${bulkSendQueue.length} mensagens foram preparadas.</p><button id="close-queue-btn" class="btn btn-secondary">Fechar</button></div>`;
             feather.replace();
-            return;
-        }
+
+    // --- LINHAS ADICIONADAS AQUI ---
+    phoneNumbersInput.value = ''; // Limpa os números
+    messageTextArea.value = '';   // Limpa a mensagem
+    placeholderEditorContainer.style.display = 'none'; // Esconde o editor
+    // -----------------------------
+
+    return;
+}
         const number = bulkSendQueue[currentBulkSendIndex];
         sendWhatsAppMessage(number, message);
         sendQueueContent.innerHTML = `<p class="card-subtitle">Passo ${currentBulkSendIndex + 1} de ${bulkSendQueue.length}</p><h3>Enviando para: <span class="queue-number-highlight">${number}</span></h3><p>Após enviar e fechar a aba, clique abaixo para continuar.</p><button id="next-in-queue-btn" class="btn">Já enviei, Próximo >></button><button id="close-queue-btn" class="btn btn-secondary" style="margin-top: 1rem;">Cancelar Disparos</button>`;
