@@ -5,11 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZapGo - Mensagens Prontas</title>
     
-    <link rel="manifest" href="manifest.json">
+      
     <meta name="theme-color" content="#8A2BE2">
-    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
     
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="ZapGo">
+    <link rel="apple-touch-icon" href="icon-192x192.png"> <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
 </head>
 <body>
 
@@ -90,6 +96,15 @@
         
         </div>
     </main>
+
+    <div id="ios-install-prompt" class="install-prompt" style="display: none;">
+        <div class="prompt-content">
+            <span>Para instalar o app, toque em</span>
+            <img src="https://i.imgur.com/b2aGz21.png" alt="Ícone de Compartilhamento do iOS" class="share-icon">
+            <span>e depois em "Adicionar à Tela de Início"</span>
+        </div>
+        <button id="close-install-prompt" class="close-prompt">&times;</button>
+    </div>
 
     <script src="script.js"></script>
     <script>

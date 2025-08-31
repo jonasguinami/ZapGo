@@ -1,18 +1,17 @@
-// sw.js - Service Worker
+// sw.js
 
-// A versão do cache força a atualização no navegador do usuário quando você muda o código
-const CACHE_NAME = 'zap-go-v2';
+const CACHE_NAME = 'zapgo-v3'; // Mude a versão para forçar a atualização
 
-// Lista de arquivos que serão salvos para o site funcionar offline
+// Lista de arquivos essenciais para o app funcionar offline
 const urlsToCache = [
   '/',
   'index.html',
   'style.css',
   'script.js',
-  'templates.js',
-  'assets/zapgo192.jpg', // Caminho correto
-  'assets/zapgo512.jpg', // Caminho correto
-  'assets/zapgo.png'      // Caminho correto
+  'manifest.json', // Adicionado
+  'zapgo192.png', // Adicionado
+  'zapgo512.png', // Adicionado
+  'zapgo.png' // A logo da navbar
 ];
 
 // Evento de Instalação: Salva os arquivos no cache
@@ -20,13 +19,13 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('Cache aberto e arquivos sendo adicionados');
+        console.log('Cache aberto e arquivos essenciais adicionados.');
         return cache.addAll(urlsToCache);
       })
   );
 });
 
-// Evento de Ativação: Limpa caches antigos para manter tudo atualizado
+// Evento de Ativação: Limpa caches antigos
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(cacheNames => {
@@ -42,12 +41,11 @@ self.addEventListener('activate', event => {
   );
 });
 
-// Evento de Fetch: Responde com os arquivos do cache se estiverem disponíveis
+// Evento de Fetch: Responde com os arquivos do cache se offline
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
       .then(response => {
-        // Se o arquivo estiver no cache, retorna ele. Senão, busca na rede.
         return response || fetch(event.request);
       })
   );

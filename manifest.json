@@ -8,12 +8,12 @@
   "theme_color": "#8A2BE2",
   "icons": [
     {
-      "src": "assets/zapgo192.jpg",
+      "src": "zapgo192.jpg",
       "type": "image/jpeg",
       "sizes": "192x192"
     },
     {
-      "src": "assets/zapgo512.jpg",
+      "src": "zapgo512.jpg",
       "type": "image/jpeg",
       "sizes": "512x512"
     }
